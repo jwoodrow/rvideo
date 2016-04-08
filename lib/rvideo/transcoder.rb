@@ -90,11 +90,11 @@ module RVideo # :nodoc:
         @input_file = options[:input_file]
       end
       
-      Transcoder.logger.info("\nNew transcoder job\n================\nTask: #{task}\nOptions: #{options.inspect}")
+      puts "\nNew transcoder job\n================\nTask: #{task}\nOptions: #{options.inspect}"
       parse_and_execute(task, options)      
       @processed = Inspector.new(:file => options[:output_file])
       result = check_integrity
-      Transcoder.logger.info("\nFinished task. Total errors: #{@errors.size}\n")
+      puts "\nFinished task. Total errors: #{@errors.size}\n"
       @total_time = Time.now - t1
       result
     rescue TranscoderError => e
