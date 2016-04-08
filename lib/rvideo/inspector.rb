@@ -161,9 +161,9 @@ module RVideo # :nodoc:
       # mplayer $input_file$ -ss $start_time$ -frames 1 -vo jpeg -o $output_file$
       # ffmpeg -i $input_file$ -v nopb -ss $start_time$ -b $bitrate$ -an -vframes 1 -y $output_file$
       command = "ffmpeg -i #{@full_filename} -ss #{t} -t 00:00:01 -r 1 -vframes 1 -f image2 #{output_file}"
-      Transcoder.logger.info("\nCreating Screenshot: #{command}\n")
+      puts "\nCreating Screenshot: #{command}\n"
       frame_result = `#{command} 2>&1`
-      Transcoder.logger.info("\nScreenshot results: #{frame_result}")
+      puts "\nScreenshot results: #{frame_result}"
       output_file
     end
 
