@@ -53,18 +53,6 @@ module RVideo # :nodoc:
     #   RVideo::Transcoder.logger = logger
     #
     
-    def self.logger=(l)
-      @logger = l
-    end
-    
-    def self.logger
-      if @logger.nil?
-        @logger = Logger.new('/dev/null')
-      end
-      
-      @logger
-    end
-    
     #
     # Requires a command and a hash of various interpolated options. The
     # command should be one or more lines of transcoder tool commands (e.g.
