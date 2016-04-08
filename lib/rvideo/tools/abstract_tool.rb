@@ -14,8 +14,7 @@ module RVideo # :nodoc:
         # rescue NameError, /uninitialized constant/
           # raise TranscoderError::UnknownTool, "The recipe tried to use the '#{tool_name}' tool, which does not exist."
         rescue => e
-          LOGGER.info $!
-          LOGGER.info e.backtrace.join("\n")
+          puts e
         end
       end
       
